@@ -1,4 +1,4 @@
-package com.censoredsoftware.infractions.bukkit.api.test;
+package com.censoredsoftware.infractions.bukkit.test;
 
 import com.censoredsoftware.infractions.bukkit.Database;
 import com.censoredsoftware.infractions.bukkit.Infraction;
