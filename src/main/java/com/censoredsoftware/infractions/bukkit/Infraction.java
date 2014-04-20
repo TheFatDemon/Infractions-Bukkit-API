@@ -26,6 +26,8 @@ public class Infraction
 	 *
 	 * @param playerId    The Mojang UUID of the player.
 	 * @param timeCreated The time the Infraction was first created.
+	 * @param reason      The reason for this Infraction.
+	 * @param score       The score of this Infraction.
 	 * @param issuer      The issuer of the Infraction.
 	 * @param evidence    The evidence associated with this Infraction.
 	 */
@@ -39,6 +41,8 @@ public class Infraction
 	 *
 	 * @param playerId    The Mojang UUID of the player.
 	 * @param timeCreated The time the Infraction was first created.
+	 * @param reason      The reason for this Infraction.
+	 * @param score       The score of this Infraction.
 	 * @param issuer      The issuer of the Infraction.
 	 * @param evidence    The evidence associated with this Infraction.
 	 */
