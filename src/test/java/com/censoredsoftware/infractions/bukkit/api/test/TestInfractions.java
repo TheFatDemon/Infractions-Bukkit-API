@@ -38,10 +38,10 @@ public class TestInfractions
 		Dossier hqmDossier = TEST_DATABASE.getDossier("HmmmQuestionMark");
 		Dossier alexDossier = TEST_DATABASE.getDossier("_Alex");
 
-		assertEquals("HmmmQuestionMark ID Match", hqmId, hqmDossier.getId());
-		assertEquals("_Alex ID Match", alexId, alexDossier.getId());
+		assertEquals("Failure: HmmmQuestionMark ID No Match", hqmId, hqmDossier.getId());
+		assertEquals("Failure: _Alex ID No Match", alexId, alexDossier.getId());
 
-		assertEquals("HmmmQuestionMark Score Match", 80, hqmDossier.getScore());
-		assertEquals("_Alex Score Match", 100, alexDossier.getScore());
+		assertEquals("Failure: HmmmQuestionMark Score No Match", 80, hqmDossier.getScore());
+		assertEquals("Failure: _Alex Score No Match", 100, alexDossier.getScore());
 	}
 }
