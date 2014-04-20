@@ -20,7 +20,7 @@ public final class Infractions
 	/**
 	 * Get the singleton Database.
 	 *
-	 * @return
+	 * @return The database.
 	 */
 	public static Database getDatabase()
 	{
@@ -29,6 +29,7 @@ public final class Infractions
 
 	/**
 	 * Set the singleton Database.
+	 *
 	 * @param database The database.
 	 */
 	public static void setDatabase(Database database)
