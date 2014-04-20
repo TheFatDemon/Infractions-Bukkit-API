@@ -1,7 +1,7 @@
 package com.censoredsoftware.infractions.bukkit.api.test;
 
-import com.censoredsoftware.infractions.bukkit.api.Dossier;
-import com.censoredsoftware.infractions.bukkit.api.Infraction;
+import com.censoredsoftware.infractions.bukkit.Infraction;
+import com.censoredsoftware.infractions.bukkit.dossier.Dossier;
 import com.google.common.collect.Sets;
 
 import java.util.Set;
@@ -19,7 +19,7 @@ public class TestDossier implements Dossier
 	}
 
 	@Override
-	public UUID getId()
+	public UUID getMojangId()
 	{
 		return mojangid;
 	}

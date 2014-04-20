@@ -1,5 +1,10 @@
 package com.censoredsoftware.infractions.bukkit.api.test;
 
+import com.censoredsoftware.infractions.bukkit.Database;
+import com.censoredsoftware.infractions.bukkit.Infraction;
+import com.censoredsoftware.infractions.bukkit.dossier.CompleteDossier;
+import com.censoredsoftware.infractions.bukkit.dossier.Dossier;
+import com.censoredsoftware.infractions.bukkit.evidence.Evidence;
 import com.censoredsoftware.library.helper.MojangIdProvider;
 import com.google.common.collect.Sets;
 import org.bukkit.entity.Player;
@@ -12,7 +17,7 @@ import java.util.concurrent.ConcurrentMap;
 
 public class TestDatabase implements Database
 {
-	public final ConcurrentMap<UUID, Dossier> DOSSIER_MAP = new ConcurrentHashMap<UUID, Dossier>();
+	private final ConcurrentMap<UUID, Dossier> DOSSIER_MAP = new ConcurrentHashMap<UUID, Dossier>();
 
 	@Override
 	public CompleteDossier getCompleteDossier(UUID playerId) throws NullPointerException
@@ -48,6 +53,24 @@ public class TestDatabase implements Database
 	public Dossier getDossier(String playerName)
 	{
 		return DOSSIER_MAP.get(MojangIdProvider.getId(playerName));
+	}
+
+	@Override
+	public void addDossier(Dossier dossier)
+	{
+		DOSSIER_MAP.put(dossier.getMojangId(), dossier);
+	}
+
+	@Override
+	public void removeDossier(Dossier dossier)
+	{
+		DOSSIER_MAP.remove(dossier.getMojangId());
+	}
+
+	@Override
+	public void removeDossier(UUID playerId)
+	{
+		DOSSIER_MAP.remove(playerId);
 	}
 
 	@Override

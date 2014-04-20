@@ -1,7 +1,7 @@
 package com.censoredsoftware.infractions.bukkit.api.test;
 
-import com.censoredsoftware.infractions.bukkit.api.CompleteDossier;
-import com.censoredsoftware.infractions.bukkit.api.Infraction;
+import com.censoredsoftware.infractions.bukkit.Infraction;
+import com.censoredsoftware.infractions.bukkit.dossier.CompleteDossier;
 import org.bukkit.OfflinePlayer;
 
 import java.util.UUID;

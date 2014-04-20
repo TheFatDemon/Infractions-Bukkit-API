@@ -60,6 +60,26 @@ public interface Database
 	@Deprecated() Dossier getDossier(String playerName);
 
 	/**
+	 * Add a dossier to the database.
+	 * @param dossier The dossier.
+	 */
+	void addDossier(Dossier dossier);
+
+	/**
+	 * Remove a dossier from the database.
+	 *
+	 * @param dossier The dossier.
+	 */
+	void removeDossier(Dossier dossier);
+
+	/**
+	 * Remove a dossier from the database.
+	 *
+	 * @param playerId The player Mojang id.
+	 */
+	void removeDossier(UUID playerId);
+
+	/**
 	 * The Set of all Dossiers.
 	 *
 	 * @return All Dossiers.

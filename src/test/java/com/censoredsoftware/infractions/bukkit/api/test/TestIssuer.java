@@ -1,6 +1,11 @@
 package com.censoredsoftware.infractions.bukkit.api.test;
 
-import com.censoredsoftware.infractions.bukkit.api.*;
+import com.censoredsoftware.infractions.bukkit.Infraction;
+import com.censoredsoftware.infractions.bukkit.Infractions;
+import com.censoredsoftware.infractions.bukkit.dossier.Dossier;
+import com.censoredsoftware.infractions.bukkit.evidence.Evidence;
+import com.censoredsoftware.infractions.bukkit.issuer.Issuer;
+import com.censoredsoftware.infractions.bukkit.issuer.IssuerType;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
@@ -17,7 +22,7 @@ public class TestIssuer extends Issuer
 	@Override
 	public Set<Infraction> getIssuedInfractions()
 	{
-		return Sets.filter(TestInfractions.TEST_DATABASE.allInfractions(), new Predicate<Infraction>()
+		return Sets.filter(Infractions.allInfractions(), new Predicate<Infraction>()
 		{
 			@Override public boolean apply(Infraction infraction)
 			{
@@ -29,7 +34,7 @@ public class TestIssuer extends Issuer
 	@Override
 	public Set<Evidence> getIssuedEvidence()
 	{
-		return Sets.filter(TestInfractions.TEST_DATABASE.allEvidence(), new Predicate<Evidence>()
+		return Sets.filter(Infractions.allEvidence(), new Predicate<Evidence>()
 		{
 			@Override public boolean apply(Evidence evidence)
 			{
@@ -41,7 +46,7 @@ public class TestIssuer extends Issuer
 	@Override
 	public Set<Dossier> getContributedDossiers()
 	{
-		return Sets.filter(TestInfractions.TEST_DATABASE.allDossiers(), new Predicate<Dossier>()
+		return Sets.filter(Infractions.allDossiers(), new Predicate<Dossier>()
 		{
 			@Override public boolean apply(Dossier dossier)
 			{
