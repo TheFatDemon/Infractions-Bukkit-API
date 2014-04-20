@@ -1,9 +1,9 @@
 package com.censoredsoftware.infractions.bukkit.api.test;
 
-import com.censoredsoftware.infractions.bukkit.api.*;
 import com.censoredsoftware.library.helper.MojangIdProvider;
 import com.google.common.collect.Sets;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 
 import java.util.Set;
 import java.util.UUID;
@@ -72,5 +72,11 @@ public class TestDatabase implements Database
 		for(Infraction infraction : allInfractions())
 			evidence.addAll(infraction.getEvidence());
 		return evidence;
+	}
+
+	@Override
+	public Plugin getPlugin()
+	{
+		return null;
 	}
 }

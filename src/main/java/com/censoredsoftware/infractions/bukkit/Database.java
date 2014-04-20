@@ -1,6 +1,10 @@
-package com.censoredsoftware.infractions.bukkit.api;
+package com.censoredsoftware.infractions.bukkit;
 
+import com.censoredsoftware.infractions.bukkit.dossier.CompleteDossier;
+import com.censoredsoftware.infractions.bukkit.dossier.Dossier;
+import com.censoredsoftware.infractions.bukkit.evidence.Evidence;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 
 import java.util.Set;
 import java.util.UUID;
@@ -75,4 +79,11 @@ public interface Database
 	 * @return All Evidence.
 	 */
 	Set<Evidence> allEvidence();
+
+	/**
+	 * Return the plugin implementing the API.
+	 *
+	 * @return The plugin.
+	 */
+	Plugin getPlugin();
 }

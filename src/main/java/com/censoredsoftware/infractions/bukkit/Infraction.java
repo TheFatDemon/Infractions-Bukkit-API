@@ -1,5 +1,7 @@
-package com.censoredsoftware.infractions.bukkit.api;
+package com.censoredsoftware.infractions.bukkit;
 
+import com.censoredsoftware.infractions.bukkit.evidence.Evidence;
+import com.censoredsoftware.infractions.bukkit.issuer.Issuer;
 import com.google.common.base.Function;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Sets;

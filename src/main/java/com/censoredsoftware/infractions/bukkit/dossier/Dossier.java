@@ -1,4 +1,6 @@
-package com.censoredsoftware.infractions.bukkit.api;
+package com.censoredsoftware.infractions.bukkit.dossier;
+
+import com.censoredsoftware.infractions.bukkit.Infraction;
 
 import java.util.Set;
 import java.util.UUID;
@@ -28,4 +30,18 @@ public interface Dossier
 	 * @return Collection of Infractions.
 	 */
 	Set<Infraction> getInfractions();
+
+	/**
+	 * Award an infraction to the player.
+	 *
+	 * @param infraction The infraction.
+	 */
+	void cite(Infraction infraction);
+
+	/**
+	 * Remove an infraction from the player.
+	 *
+	 * @param infraction The infraction.
+	 */
+	void acquit(Infraction infraction);
 }

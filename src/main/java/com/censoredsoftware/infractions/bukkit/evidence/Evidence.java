@@ -1,4 +1,6 @@
-package com.censoredsoftware.infractions.bukkit.api;
+package com.censoredsoftware.infractions.bukkit.evidence;
+
+import com.censoredsoftware.infractions.bukkit.issuer.Issuer;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

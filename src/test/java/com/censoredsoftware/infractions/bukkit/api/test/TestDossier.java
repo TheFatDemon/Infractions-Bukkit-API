@@ -38,4 +38,16 @@ public class TestDossier implements Dossier
 	{
 		return infractions;
 	}
+
+	@Override
+	public void cite(Infraction infraction)
+	{
+		infractions.add(infraction);
+	}
+
+	@Override
+	public void acquit(Infraction infraction)
+	{
+		infractions.remove(infraction);
+	}
 }

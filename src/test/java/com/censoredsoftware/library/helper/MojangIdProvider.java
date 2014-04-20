@@ -28,7 +28,7 @@ public class MojangIdProvider
 	/**
 	 * Get the UUID of a player name.
 	 *
-	 * @param offlinePlayer The player that we are checking the UUID of.
+	 * @param playerName The player name that we are checking the UUID of.
 	 * @return The Mojang UUID.
 	 */
 	public static UUID getId(String playerName)

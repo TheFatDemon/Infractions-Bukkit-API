@@ -1,4 +1,4 @@
-package com.censoredsoftware.infractions.bukkit.api;
+package com.censoredsoftware.infractions.bukkit.issuer;
 
 /**
  * Enum representing the type of issuer for an infraction.

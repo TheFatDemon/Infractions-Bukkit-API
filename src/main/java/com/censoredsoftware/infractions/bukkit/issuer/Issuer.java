@@ -1,4 +1,8 @@
-package com.censoredsoftware.infractions.bukkit.api;
+package com.censoredsoftware.infractions.bukkit.issuer;
+
+import com.censoredsoftware.infractions.bukkit.Infraction;
+import com.censoredsoftware.infractions.bukkit.dossier.Dossier;
+import com.censoredsoftware.infractions.bukkit.evidence.Evidence;
 
 import java.util.Set;
 

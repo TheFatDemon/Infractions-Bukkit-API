@@ -1,4 +1,4 @@
-package com.censoredsoftware.infractions.bukkit.api;
+package com.censoredsoftware.infractions.bukkit.evidence;
 
 /**
  * Enum representing the different types of Evidence.
