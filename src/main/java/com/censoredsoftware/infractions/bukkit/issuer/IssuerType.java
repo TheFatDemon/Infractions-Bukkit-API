@@ -36,15 +36,15 @@ public enum IssuerType
 	 */
 	STAFF,
 	/**
-	 * This plugin was issued by a legacy version of Infractions.
+	 * The legacy plugin issued an infraction.
 	 */
 	LEGACY,
 	/**
-	 * The origin is unknown or unknowable.
+	 * An unknown or unknowable issuer issued an infraction.
 	 */
 	UNKNOWN,
 	/**
-	 * A plugin has implemented a custom way to issue an infraction.
+	 * A plugin issued an infraction.
 	 */
 	CUSTOM
 }
