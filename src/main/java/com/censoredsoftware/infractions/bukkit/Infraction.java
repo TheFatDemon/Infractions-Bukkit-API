@@ -24,6 +24,7 @@ package com.censoredsoftware.infractions.bukkit;
 
 import com.censoredsoftware.infractions.bukkit.evidence.Evidence;
 import com.censoredsoftware.infractions.bukkit.issuer.Issuer;
+import com.censoredsoftware.infractions.bukkit.origin.Origin;
 import com.google.common.base.Function;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Sets;
@@ -98,6 +99,16 @@ public class Infraction
 	public Issuer getIssuer()
 	{
 		return issuer;
+	}
+
+	/**
+	 * Get the creation origin.
+	 *
+	 * @return The origin.
+	 */
+	public Origin getOrigin()
+	{
+		return getIssuer().getOrigin();
 	}
 
 	public Set<Issuer> getEvidenceIssuers()
