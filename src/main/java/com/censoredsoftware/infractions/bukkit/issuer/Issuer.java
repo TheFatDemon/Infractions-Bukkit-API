@@ -169,7 +169,14 @@ public class Issuer
 				{
 					@Override public boolean apply(Infraction infraction)
 					{
-						return getId().equals(infraction.getIssuer().getId());
+						return getId().equals(infraction.getIssuer().getId()) || Iterables.any(infraction.getEvidence(), new Predicate<Evidence>()
+						{
+							@Override
+							public boolean apply(Evidence evidence)
+							{
+								return getId().equals(evidence.getIssuer().getId());
+							}
+						});
 					}
 				});
 			}

@@ -22,7 +22,16 @@
 
 package com.censoredsoftware.infractions.bukkit.origin;
 
+import com.censoredsoftware.infractions.bukkit.Infraction;
+import com.censoredsoftware.infractions.bukkit.Infractions;
+import com.censoredsoftware.infractions.bukkit.dossier.Dossier;
+import com.censoredsoftware.infractions.bukkit.evidence.Evidence;
 import com.google.common.base.Objects;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Sets;
+
+import java.util.Set;
 
 /**
  * Class object representing the origin of any form of data.
@@ -123,5 +132,94 @@ public class Origin
 		return other instanceof Origin && getName().equals(((Origin) other).getName());
 	}
 
+	/**
+	 * Set of all issued/created Infractions from this Origin.
+	 *
+	 * @return Infractions.
+	 */
+	public Set<Infraction> getInfractions()
+	{
+		final Origin origin = this;
+		return Sets.filter(Infractions.allInfractions(), new Predicate<Infraction>()
+		{
+			@Override public boolean apply(Infraction infraction)
+			{
+				return origin.equals(infraction.getOrigin());
+			}
+		});
+	}
+
+	/**
+	 * Set of Evidence from this Origin.
+	 *
+	 * @return Evidence.
+	 */
+	public Set<Evidence> getEvidence()
+	{
+		final Origin origin = this;
+		return Sets.filter(Infractions.allEvidence(), new Predicate<Evidence>()
+		{
+			@Override public boolean apply(Evidence evidence)
+			{
+				return origin.equals(evidence.getOrigin());
+			}
+		});
+	}
+
+	/**
+	 * Set of Infractions with data from this Origin.
+	 *
+	 * @return Infractions.
+	 */
+	public Set<Infraction> getContributedInfractions()
+	{
+		final Origin origin = this;
+		return Sets.filter(Infractions.allInfractions(), new Predicate<Infraction>()
+		{
+			@Override
+			public boolean apply(Infraction infraction)
+			{
+				return Iterables.any(infraction.getEvidence(), new Predicate<Evidence>()
+				{
+					@Override
+					public boolean apply(Evidence evidence)
+					{
+						return origin.equals(evidence.getOrigin());
+					}
+				});
+			}
+		});
+	}
+
+	/**
+	 * Set of Dossiers with data from this Origin.
+	 *
+	 * @return Dossiers.
+	 */
+	public Set<Dossier> getContributedDossiers()
+	{
+		final Origin origin = this;
+		return Sets.filter(Infractions.allDossiers(), new Predicate<Dossier>()
+		{
+			@Override public boolean apply(Dossier dossier)
+			{
+				return Iterables.any(dossier.getInfractions(), new Predicate<Infraction>()
+				{
+					@Override
+					public boolean apply(Infraction infraction)
+					{
+						return origin.equals(infraction.getOrigin()) || Iterables.any(infraction.getEvidence(), new Predicate<Evidence>()
+						{
+							@Override
+							public boolean apply(Evidence evidence)
+							{
+								return origin.equals(evidence.getOrigin());
+							}
+						});
+					}
+				});
+			}
+		});
+	}
 }
 
