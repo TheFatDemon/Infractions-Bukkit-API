@@ -141,12 +141,12 @@ public final class Infractions
 	}
 
 	/**
-	 * Get the Dossier from the Mojang UUID of a player.
+	 * Get the Dossier from the name of a player.
 	 * The implementation may attempt to create a new Dossier if none exists.
 	 *
 	 * @param playerName The last known name of the player.
 	 * @return The Dossier.
-	 * @deprecated The data returned from this method WILL BE WRONG if a player changes their name.
+	 * @deprecated The data returned from this method <b>WILL BE WRONG</b> if a player changes their name.
 	 */
 	@Deprecated()
 	public static Dossier getDossier(String playerName)
