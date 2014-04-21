@@ -1,8 +1,31 @@
+/*
+ * Copyright (c) 2014 Alexander Chauncey
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
 package com.censoredsoftware.infractions.bukkit;
 
 import com.censoredsoftware.infractions.bukkit.dossier.CompleteDossier;
 import com.censoredsoftware.infractions.bukkit.dossier.Dossier;
 import com.censoredsoftware.infractions.bukkit.evidence.Evidence;
+import com.censoredsoftware.infractions.bukkit.origin.Origin;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
@@ -16,6 +39,9 @@ public final class Infractions
 {
 	// The Singleton Database
 	private static Database database;
+
+	// Default Origin
+	private static Origin defaultOrigin;
 
 	/**
 	 * Get the singleton Database.
@@ -40,6 +66,31 @@ public final class Infractions
 		}
 
 		Infractions.database = database;
+	}
+
+	/**
+	 * Get the singleton default Origin.
+	 *
+	 * @return The default origin.
+	 */
+	public static Origin getDefaultOrigin()
+	{
+		return defaultOrigin;
+	}
+
+	/**
+	 * Set the singleton default origin.
+	 *
+	 * @param defaultOrigin The default origin.
+	 */
+	public static void setDefaultOrigin(Origin defaultOrigin)
+	{
+		if(Infractions.defaultOrigin != null)
+		{
+			throw new UnsupportedOperationException("Cannot redefine singleton Origin");
+		}
+
+		Infractions.defaultOrigin = defaultOrigin;
 	}
 
 	/**

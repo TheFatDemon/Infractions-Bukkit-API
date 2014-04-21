@@ -20,50 +20,23 @@
  * THE SOFTWARE.
  */
 
-package com.censoredsoftware.infractions.bukkit.dossier;
-
-import com.censoredsoftware.infractions.bukkit.Infraction;
-
-import java.util.Set;
-import java.util.UUID;
+package com.censoredsoftware.infractions.bukkit.origin;
 
 /**
- * Interface representing only the minimal data tracked by Infractions concerning a particular player.
+ * Enum representing the type of an Origin.
  */
-public interface Dossier
+public enum OriginType
 {
 	/**
-	 * Get the Mojang UUID associated with this player.
-	 *
-	 * @return The UUID.
+	 * A server as the origin.
 	 */
-	UUID getMojangId();
-
+	SERVER,
 	/**
-	 * Get the total score for this player.
-	 *
-	 * @return The total score.
+	 * Some sort of external app as the origin.
 	 */
-	int getScore();
-
+	APP,
 	/**
-	 * Get a collection of Infractions that belong to this player.
-	 *
-	 * @return Collection of Infractions.
+	 * A different type of origin.
 	 */
-	Set<Infraction> getInfractions();
-
-	/**
-	 * Award an infraction to the player.
-	 *
-	 * @param infraction The infraction.
-	 */
-	void cite(Infraction infraction);
-
-	/**
-	 * Remove an infraction from the player.
-	 *
-	 * @param infraction The infraction.
-	 */
-	void acquit(Infraction infraction);
+	OTHER
 }

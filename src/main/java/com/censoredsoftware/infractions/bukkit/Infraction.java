@@ -1,3 +1,25 @@
+/*
+ * Copyright (c) 2014 Alexander Chauncey
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
 package com.censoredsoftware.infractions.bukkit;
 
 import com.censoredsoftware.infractions.bukkit.evidence.Evidence;
@@ -20,6 +42,7 @@ public class Infraction
 	private String reason;
 	private Integer score;
 	private Set<Evidence> evidence;
+	private List<String> notes;
 
 	/**
 	 * Create a new Infraction object.
@@ -54,6 +77,7 @@ public class Infraction
 		this.reason = reason;
 		this.score = score;
 		this.evidence = evidence;
+		this.notes = new ArrayList<String>();
 	}
 
 	/**
@@ -138,5 +162,25 @@ public class Infraction
 	public Set<Evidence> getEvidence()
 	{
 		return evidence;
+	}
+
+	/**
+	 * Misc. notes on an Infraction..
+	 *
+	 * @return List of notes.
+	 */
+	public List<String> getNotes()
+	{
+		return notes;
+	}
+
+	/**
+	 * Set the list of notes on this Infraction.
+	 *
+	 * @param notes Notes to be set.
+	 */
+	public void setNotes(List<String> notes)
+	{
+		this.notes = notes;
 	}
 }
