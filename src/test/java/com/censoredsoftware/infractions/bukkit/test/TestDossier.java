@@ -23,6 +23,7 @@
 package com.censoredsoftware.infractions.bukkit.test;
 
 import com.censoredsoftware.infractions.bukkit.Infraction;
+import com.censoredsoftware.infractions.bukkit.dossier.CompleteDossier;
 import com.censoredsoftware.infractions.bukkit.dossier.Dossier;
 import com.google.common.collect.Sets;
 
@@ -36,8 +37,13 @@ public class TestDossier implements Dossier
 
 	public TestDossier(UUID mojangId, Infraction... infractions)
 	{
+		this(mojangId, Sets.newHashSet(infractions));
+	}
+
+	public TestDossier(UUID mojangId, Set<Infraction> infractions)
+	{
 		this.mojangid = mojangId;
-		this.infractions = Sets.newHashSet(infractions);
+		this.infractions = infractions;
 	}
 
 	@Override
@@ -71,5 +77,17 @@ public class TestDossier implements Dossier
 	public void acquit(Infraction infraction)
 	{
 		infractions.remove(infraction);
+	}
+
+	@Override
+	public CompleteDossier complete(String playerName)
+	{
+		return new TestCompleteDossier(getMojangId(), playerName, getInfractions());
+	}
+
+	@Override
+	public CompleteDossier complete() throws ClassCastException
+	{
+		return (CompleteDossier) this;
 	}
 }

@@ -79,7 +79,7 @@ public interface Dossier
 	 * Return the CompelteDossier instance of this object if it is complete.
 	 *
 	 * @return CompleteDossier of the data.
-	 * @throws NullPointerException if data is incomplete.
+	 * @throws ClassCastException if data is incomplete.
 	 */
-	CompleteDossier complete() throws NullPointerException;
+	CompleteDossier complete() throws ClassCastException;
 }
