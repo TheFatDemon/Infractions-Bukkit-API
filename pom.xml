@@ -28,7 +28,7 @@
 
     <groupId>com.censoredsoftware</groupId>
     <artifactId>infractions-bukkit-api</artifactId>
-    <version>0.5.0</version>
+    <version>0.5.0-SNAPSHOT</version>
 
     <repositories>
         <repository>
