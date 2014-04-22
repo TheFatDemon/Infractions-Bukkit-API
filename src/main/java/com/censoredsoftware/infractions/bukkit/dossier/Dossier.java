@@ -66,4 +66,20 @@ public interface Dossier
 	 * @param infraction The infraction.
 	 */
 	void acquit(Infraction infraction);
+
+	/**
+	 * If this Dossier isn't complete, complete it.
+	 *
+	 * @param playerName The name of the player to complete the data.
+	 * @return Replacement CompleteDossier of the data.
+	 */
+	CompleteDossier complete(String playerName);
+
+	/**
+	 * Return the CompelteDossier instance of this object if it is complete.
+	 *
+	 * @return CompleteDossier of the data.
+	 * @throws NullPointerException if data is incomplete.
+	 */
+	CompleteDossier complete() throws NullPointerException;
 }
