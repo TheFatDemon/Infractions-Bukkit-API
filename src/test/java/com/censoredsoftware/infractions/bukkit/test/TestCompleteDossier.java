@@ -56,4 +56,16 @@ public class TestCompleteDossier extends TestDossier implements CompleteDossier
 	{
 		return lastKnownName;
 	}
+
+	@Override
+	public CompleteDossier complete(String playerName)
+	{
+		return this;
+	}
+
+	@Override
+	public CompleteDossier complete()
+	{
+		return this;
+	}
 }
