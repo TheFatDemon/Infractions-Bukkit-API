@@ -47,7 +47,7 @@ public class TestDossier implements Dossier
 	}
 
 	@Override
-	public UUID getMojangId()
+	public UUID getId()
 	{
 		return mojangid;
 	}
@@ -82,7 +82,7 @@ public class TestDossier implements Dossier
 	@Override
 	public CompleteDossier complete(String playerName)
 	{
-		return new TestCompleteDossier(getMojangId(), playerName, getInfractions());
+		return new TestCompleteDossier(getId(), playerName, getInfractions());
 	}
 
 	@Override

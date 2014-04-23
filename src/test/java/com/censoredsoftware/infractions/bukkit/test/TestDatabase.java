@@ -80,13 +80,13 @@ public class TestDatabase implements Database
 	@Override
 	public void addDossier(Dossier dossier)
 	{
-		DOSSIER_MAP.put(dossier.getMojangId(), dossier);
+		DOSSIER_MAP.put(dossier.getId(), dossier);
 	}
 
 	@Override
 	public void removeDossier(Dossier dossier)
 	{
-		DOSSIER_MAP.remove(dossier.getMojangId());
+		DOSSIER_MAP.remove(dossier.getId());
 	}
 
 	@Override

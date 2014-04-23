@@ -37,7 +37,7 @@ public interface Dossier
 	 *
 	 * @return The UUID.
 	 */
-	UUID getMojangId();
+	UUID getId();
 
 	/**
 	 * Get the total score for this player.

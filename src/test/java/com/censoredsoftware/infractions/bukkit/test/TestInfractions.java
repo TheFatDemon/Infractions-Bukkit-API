@@ -64,8 +64,8 @@ public class TestInfractions
 		Dossier hqmDossier = Infractions.getDossier("HmmmQuestionMark");
 		Dossier alexDossier = Infractions.getDossier("_Alex");
 
-		assertEquals("Failure: HmmmQuestionMark ID No Match", hqmId, hqmDossier.getMojangId());
-		assertEquals("Failure: _Alex ID No Match", alexId, alexDossier.getMojangId());
+		assertEquals("Failure: HmmmQuestionMark ID No Match", hqmId, hqmDossier.getId());
+		assertEquals("Failure: _Alex ID No Match", alexId, alexDossier.getId());
 
 		assertEquals("Failure: HmmmQuestionMark Score No Match", 80, hqmDossier.getScore());
 		assertEquals("Failure: _Alex Score No Match", 100, alexDossier.getScore());
