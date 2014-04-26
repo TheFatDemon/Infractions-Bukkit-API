@@ -27,7 +27,10 @@ import com.censoredsoftware.infractions.bukkit.Infractions;
 import com.censoredsoftware.infractions.bukkit.dossier.Dossier;
 import com.censoredsoftware.infractions.bukkit.issuer.Issuer;
 import com.censoredsoftware.infractions.bukkit.issuer.IssuerType;
+import com.censoredsoftware.infractions.bukkit.origin.Origin;
+import com.censoredsoftware.infractions.bukkit.origin.OriginType;
 import com.censoredsoftware.library.helper.MojangIdProvider;
+import org.bukkit.Bukkit;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -53,6 +56,7 @@ public class TestInfractions
 	{
 		// Set the test database.
 		Infractions.setDatabase(new TestDatabase());
+		Infractions.setDefaultOrigin(new Origin(Bukkit.getServerName(), Bukkit.getServerName(), OriginType.SERVER));
 
 		Infractions.addDossier(new TestCompleteDossier(hqmId, "HmmmQuestionMark", new Infraction(hqmId, System.currentTimeMillis(), "Testing.", 80, new Issuer(IssuerType.LEGACY, "LEGACY"))));
 		Infractions.addDossier(new TestCompleteDossier(alexId, "_Alex", new Infraction(alexId, System.currentTimeMillis(), "Testing.", 100, new Issuer(IssuerType.STAFF, hqmId.toString()))));

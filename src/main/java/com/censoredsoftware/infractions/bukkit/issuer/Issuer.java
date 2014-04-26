@@ -38,10 +38,10 @@ import java.util.Set;
  */
 public class Issuer
 {
-	// Private Data Fields
-	private IssuerType type;
-	private String id;
-	private Origin origin;
+	// Protected Data Fields
+	protected IssuerType type;
+	protected String id;
+	protected Origin origin;
 
 	/**
 	 * Create a new Issuer object.
