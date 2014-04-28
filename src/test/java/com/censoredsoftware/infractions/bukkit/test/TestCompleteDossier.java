@@ -27,12 +27,14 @@ import com.censoredsoftware.infractions.bukkit.dossier.CompleteDossier;
 import com.google.common.collect.Sets;
 import org.bukkit.OfflinePlayer;
 
+import java.net.InetAddress;
 import java.util.Set;
 import java.util.UUID;
 
 public class TestCompleteDossier extends TestDossier implements CompleteDossier
 {
 	private String lastKnownName;
+	private Set<InetAddress> ipAddresses;
 
 	public TestCompleteDossier(UUID mojangId, String lastKnownName, Infraction... infractions)
 	{
@@ -43,6 +45,7 @@ public class TestCompleteDossier extends TestDossier implements CompleteDossier
 	{
 		super(mojangId, infractions);
 		this.lastKnownName = lastKnownName;
+		this.ipAddresses = Sets.newHashSet();
 	}
 
 	@Override
@@ -55,6 +58,11 @@ public class TestCompleteDossier extends TestDossier implements CompleteDossier
 	public String getLastKnownName()
 	{
 		return lastKnownName;
+	}
+
+	@Override public Set<InetAddress> getAssociatedIPAddresses()
+	{
+		return ipAddresses;
 	}
 
 	@Override

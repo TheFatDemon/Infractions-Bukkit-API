@@ -24,6 +24,9 @@ package com.censoredsoftware.infractions.bukkit.dossier;
 
 import org.bukkit.OfflinePlayer;
 
+import java.net.InetAddress;
+import java.util.Set;
+
 /**
  * Interface representing all data tracked by Infractions concerning a particular player.
  */
@@ -43,4 +46,11 @@ public interface CompleteDossier extends Dossier
 	 * @return The name.
 	 */
 	String getLastKnownName();
+
+	/**
+	 * Get a set of recorded IP addresses.
+	 *
+	 * @return The addresses.
+	 */
+	Set<InetAddress> getAssociatedIPAddresses();
 }
