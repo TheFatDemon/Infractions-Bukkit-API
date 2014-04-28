@@ -28,6 +28,7 @@ import com.censoredsoftware.infractions.bukkit.evidence.Evidence;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
+import java.net.InetAddress;
 import java.util.Set;
 import java.util.UUID;
 
@@ -62,6 +63,14 @@ public interface Database
 	 * @return The CompleteDossier.
 	 */
 	CompleteDossier getCompleteDossier(Player player);
+
+	/**
+	 * Get a set of CompleteDossiers sharing an IP address.
+	 *
+	 * @param address The Address.
+	 * @return The set of  CompleteDossiers.
+	 */
+	Set<CompleteDossier> getCompleteDossiers(InetAddress address);
 
 	/**
 	 * Get the Dossier from the Mojang UUID of a player.

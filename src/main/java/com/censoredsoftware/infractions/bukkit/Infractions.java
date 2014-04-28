@@ -29,6 +29,7 @@ import com.censoredsoftware.infractions.bukkit.origin.Origin;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
+import java.net.InetAddress;
 import java.util.Set;
 import java.util.UUID;
 
@@ -127,6 +128,17 @@ public final class Infractions
 	public static CompleteDossier getCompleteDossier(Player player)
 	{
 		return getDatabase().getCompleteDossier(player);
+	}
+
+	/**
+	 * Get a set of CompleteDossiers sharing an IP address.
+	 *
+	 * @param address The Address.
+	 * @return The set of  CompleteDossiers.
+	 */
+	public static Set<CompleteDossier> getCompleteDossiers(InetAddress address)
+	{
+		return getDatabase().getCompleteDossiers(address);
 	}
 
 	/**
