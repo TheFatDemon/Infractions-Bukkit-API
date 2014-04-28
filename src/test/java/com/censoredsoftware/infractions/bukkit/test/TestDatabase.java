@@ -28,10 +28,13 @@ import com.censoredsoftware.infractions.bukkit.dossier.CompleteDossier;
 import com.censoredsoftware.infractions.bukkit.dossier.Dossier;
 import com.censoredsoftware.infractions.bukkit.evidence.Evidence;
 import com.censoredsoftware.library.helper.MojangIdProvider;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Collections2;
 import com.google.common.collect.Sets;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
+import java.net.InetAddress;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -63,6 +66,20 @@ public class TestDatabase implements Database
 		Dossier dossier = DOSSIER_MAP.get(player.getUniqueId());
 		if(dossier instanceof CompleteDossier) return (CompleteDossier) dossier;
 		throw new NullPointerException("Incomplete dossier.");
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Set<CompleteDossier> getCompleteDossiers(final InetAddress address)
+	{
+		return (Set<CompleteDossier>) (Set) Sets.newHashSet(Collections2.filter(allDossiers(), new Predicate<Dossier>()
+		{
+			@Override
+			public boolean apply(Dossier dossier)
+			{
+				return dossier instanceof CompleteDossier && ((CompleteDossier) dossier).getAssociatedIPAddresses().contains(address);
+			}
+		}));
 	}
 
 	@Override
