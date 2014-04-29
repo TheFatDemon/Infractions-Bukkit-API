@@ -61,11 +61,6 @@ public final class Infractions
 	 */
 	public static void setDatabase(Database database)
 	{
-		if(Infractions.database != null)
-		{
-			throw new UnsupportedOperationException("Cannot redefine singleton Database");
-		}
-
 		Infractions.database = database;
 	}
 
