@@ -24,6 +24,7 @@ package com.censoredsoftware.infractions.bukkit;
 
 import com.censoredsoftware.infractions.bukkit.evidence.Evidence;
 import com.censoredsoftware.infractions.bukkit.issuer.Issuer;
+import com.censoredsoftware.infractions.bukkit.issuer.IssuerType;
 import com.censoredsoftware.infractions.bukkit.origin.Origin;
 import com.google.common.base.Function;
 import com.google.common.collect.Collections2;
@@ -98,6 +99,7 @@ public class Infraction
 	 */
 	public Issuer getIssuer()
 	{
+		if(issuer == null) return new Issuer(IssuerType.UNKNOWN, "UNKNOWN");
 		return issuer;
 	}
 
