@@ -130,7 +130,9 @@ public final class Infractions
 	 *
 	 * @param address The Address.
 	 * @return The set of  CompleteDossiers.
+	 * @deprecated This will cause a lot of lag when used in conjunction with other checks. DO NOT USE IN THE MAIN THREAD.
 	 */
+	@Deprecated()
 	public static Set<CompleteDossier> getCompleteDossiers(InetAddress address)
 	{
 		return getDatabase().getCompleteDossiers(address);

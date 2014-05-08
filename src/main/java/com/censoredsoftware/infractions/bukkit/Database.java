@@ -69,8 +69,9 @@ public interface Database
 	 *
 	 * @param address The Address.
 	 * @return The set of  CompleteDossiers.
+	 * @deprecated This will cause a lot of lag when used in conjunction with other checks. DO NOT USE IN THE MAIN THREAD.
 	 */
-	Set<CompleteDossier> getCompleteDossiers(InetAddress address);
+	@Deprecated() Set<CompleteDossier> getCompleteDossiers(InetAddress address);
 
 	/**
 	 * Get the Dossier from the Mojang UUID of a player.
