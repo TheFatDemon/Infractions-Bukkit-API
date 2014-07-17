@@ -37,8 +37,8 @@ import java.util.*;
  */
 public class Infraction
 {
-	// Private Data Fields
-	private UUID playerId;
+    // Private Data Fields
+    private UUID playerId;
 	private Issuer issuer;
 	private Long timeCreated;
 	private String reason;
@@ -186,6 +186,51 @@ public class Infraction
 	{
 		return notes;
 	}
+
+    /**
+     * Set the player id.
+     *
+     * @param playerId The Mojang UUID of the player.
+     */
+    public void setPlayerId(UUID playerId) {
+        this.playerId = playerId;
+    }
+
+    /**
+     * Set the issuer.
+     *
+     * @param issuer The issuer of the Infraction.
+     */
+    public void setIssuer(Issuer issuer) {
+        this.issuer = issuer;
+    }
+
+    /**
+     * Set the reason.
+     *
+     * @param reason The reason for this Infraction.
+     */
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * Set the score.
+     *
+     * @param score The score of this Infraction.
+     */
+    public void setScore(Integer score) {
+        this.score = score;
+    }
+
+    /**
+     * Set the evidence.
+     *
+     * @param evidence The evidence associated with this Infraction.
+     */
+    public void setEvidence(Set<Evidence> evidence) {
+        this.evidence = evidence;
+    }
 
 	/**
 	 * Set the list of notes on this Infraction.
