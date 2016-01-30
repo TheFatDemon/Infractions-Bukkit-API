@@ -33,15 +33,23 @@
     <repositories>
         <repository>
             <id>md_5</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots</url>
+        </repository>
+        <repository>
+            <id>md_5-2</id>
             <url>http://repo.md-5.net/content/repositories/snapshots</url>
+        </repository>
+        <repository>
+            <id>ac-repo</id>
+            <url>https://raw.github.com/mazentheamazin/AccountsClient/mvn-repo/</url>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot</artifactId>
-            <version>1.7.10-R0.1-SNAPSHOT</version>
+            <artifactId>spigot-api</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
 
@@ -55,7 +63,7 @@
         <dependency>
             <groupId>com.mojang</groupId>
             <artifactId>AccountsClient</artifactId>
-            <version>latest</version>
+            <version>1.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
